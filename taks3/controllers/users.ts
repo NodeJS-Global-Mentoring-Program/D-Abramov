@@ -4,9 +4,7 @@ import {
     userValidationSchema,
 } from '../middlewares';
 import { UserService } from '../services';
-import express from 'express';
-
-export const router = express.Router({ mergeParams : true });
+import { router } from './router';
 
 router.route('/user')
    .get((req, res) => {
