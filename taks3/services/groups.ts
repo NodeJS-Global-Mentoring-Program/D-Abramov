@@ -29,7 +29,10 @@ export class GroupsService {
 
     public static deleteGroupbyId = async (id: string) => {
         await Groups.destroy(
-            { where:  { id } }
+            {
+                where:  { id },
+                cascade: true,
+            }
         ).then((e) => {
             console.log('Rows updated', e);
         });
